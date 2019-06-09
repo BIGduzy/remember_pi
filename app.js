@@ -71,6 +71,7 @@ window.onload = () => {
     });
     
     resetButton.addEventListener('click', (e) => {
+        gameOver =  true;
         reset();
     })
     
