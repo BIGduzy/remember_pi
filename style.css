@@ -53,6 +53,7 @@ content #reset-button {
     color: #fff;
     border-radius: 4px;
     font-size: 28px;
+    margin-top: 10px;
 }
 
 content #reset-button:hover {

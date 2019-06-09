@@ -1,5 +1,6 @@
 window.onload = () => {
-	const counter = document.querySelector('#counter');
+    const counter = document.querySelector('#counter');
+    const hightestCounter = document.querySelector('#hightestCounter');
     const answer = document.querySelector('#answer');
     const mobileAnswer = document.querySelector('#mobile-answer');
     const trueAnswer = document.querySelector('#true-answer');
@@ -27,12 +28,14 @@ window.onload = () => {
     const pi = nicePi.slice(3).split(' ').join('');
 	console.log(nicePi)
     let index = 0;
+    let hightest = 0;
     let gameOver = false;
     
     const reset = () => {
         // Enter pressed, reset game
         if (gameOver) {
             index = 0;
+            counter.innerHTML = 0;
             gameOver = false;
             answer.innerHTML = '3,';
             trueAnswer.innerHTML ='3,';
@@ -53,6 +56,10 @@ window.onload = () => {
             if (pi[index] === data) {
                 index++;
                 counter.innerHTML = index;
+                if (index > hightest){
+                    hightest = index;
+                }
+                hightestCounter.innerHTML = 'Highscore: ' + hightest;
             } else {
                 const niceIndex = index + Math.round(index / 6) + 4;
                 answer.innerHTML = answer.innerText.slice(0, -1) + `<span class="bad">${answer.innerHTML.slice(-1)}</span>`;
