@@ -50,9 +50,9 @@ window.onload = () => {
 
             answer.innerHTML += ((answer.innerText.length - 2) % 6 === 0) ? ' ' + data : data;
             trueAnswer.innerHTML = answer.innerText.slice(0, -1) + `<span class="good">${answer.innerHTML.slice(-1)}</span>`;
-            counter.innerHTML = index + 1;
             if (pi[index] === data) {
                 index++;
+                counter.innerHTML = index;
             } else {
                 const niceIndex = index + Math.round(index / 6) + 4;
                 answer.innerHTML = answer.innerText.slice(0, -1) + `<span class="bad">${answer.innerHTML.slice(-1)}</span>`;
