@@ -39,6 +39,27 @@ content #mobile-answer {
     top: 90px;
 }
 
+content #reset-button {
+    all: unset;
+    align-self: flex-start;
+    background-color: #008CBA;
+    cursor: pointer;
+    position: relative;
+    padding: 10px;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 28px;
+}
+
+content #reset-button:hover {
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
+}
+
+content #reset-button:active {
+    background-color: #54f;
+    transition: 0.2s;
+}
+
 content span {
     align-self: flex-end;
     font-size: 40px;

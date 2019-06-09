@@ -3,6 +3,7 @@ window.onload = () => {
     const answer = document.querySelector('#answer');
     const mobileAnswer = document.querySelector('#mobile-answer');
     const trueAnswer = document.querySelector('#true-answer');
+    const resetButton = document.querySelector("#reset-button");
     const nicePi = "3. 14159 26535 89793 23846 26433 83279 50288 41971 69399 37510" + 
 					 " 58209 74944 59230 78164 06286 20899 86280 34825 34211 70679" +
 					 " 82148 08651 32823 06647 09384 46095 50582 23172 53594 08128" +
@@ -67,13 +68,16 @@ window.onload = () => {
     
     document.addEventListener('click', (e) => {
        mobileAnswer.focus();
-       console.log(mobileAnswer)
     });
+    
+    resetButton.addEventListener('click', (e) => {
+        reset();
+    })
     
     mobileAnswer.addEventListener('input', (e) => {
        console.log(e);
        // Fake keypress event
-       onInput({key: e.data});
+       //onInput({key: e.data});
     });
 
     document.addEventListener('keydown', onInput);
