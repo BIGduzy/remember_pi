@@ -8,6 +8,8 @@ body {
     margin: 0;
     padding: 0;
     width: 100%;
+    background-color: #24292e;
+    font-family: arial;
 }
 
 #container {
@@ -21,14 +23,15 @@ body {
 
 content {
     align-items: center;
-    border: 1px solid;
+    border: 0px solid;
     display: flex;
     flex-direction: column;
-    height: 500px;
+    height: 900px;
     max-height: 100%;
     overflow: hidden;
     width: 500px;
     position: relative;
+    color: #fff
 }
 
 content #mobile-answer {
@@ -43,8 +46,9 @@ content #reset-button {
     all: unset;
     align-self: flex-start;
     background-color: #008CBA;
-    cursor: pointer;
-    position: relative;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
     padding: 10px;
     color: #fff;
     border-radius: 4px;
@@ -72,4 +76,12 @@ content span {
 
 .bad {
     color: #F00;
+}
+
+.header {
+    padding: 1px;
+    text-align: center;
+    background: #1e2327;
+    color: white;
+    font-size: 24px;
 }
