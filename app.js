@@ -1,6 +1,7 @@
 window.onload = () => {
 	const counter = document.querySelector('#counter');
     const answer = document.querySelector('#answer');
+    const mobileAnswer = document.querySelector('#mobile-answer');
     const trueAnswer = document.querySelector('#true-answer');
     const nicePi = "3. 14159 26535 89793 23846 26433 83279 50288 41971 69399 37510" + 
 					 " 58209 74944 59230 78164 06286 20899 86280 34825 34211 70679" +
@@ -26,18 +27,23 @@ window.onload = () => {
 	console.log(nicePi)
     let index = 0;
     let gameOver = false;
-
-    document.addEventListener('keydown', (e) => {
-        const data = e.key;
+    
+    const reset = () => {
         // Enter pressed, reset game
-        if (gameOver && e.keyCode === 13) {
+        if (gameOver) {
             index = 0;
             gameOver = false;
             answer.innerHTML = '3,';
             trueAnswer.innerHTML ='3,';
+        }
+    }
+    
+    const onInput = (e) => {
+        const data = e.key;
+        if (gameOver) {
+            if (e.keyCode && e.keyCode === 13) {reset();} // Reset if enter is pressed
             return;
         }
-        if (gameOver) { return; }
 
         if (Number.isInteger(parseInt(data, 10))) {
 
@@ -56,5 +62,19 @@ window.onload = () => {
                 gameOver = true;
             }
         }
+    };
+    
+    
+    document.addEventListener('click', (e) => {
+       mobileAnswer.focus();
+       console.log(mobileAnswer)
     });
+    
+    mobileAnswer.addEventListener('input', (e) => {
+       console.log(e);
+       // Fake keypress event
+       onInput({key: e.data});
+    });
+
+    document.addEventListener('keydown', onInput);
 }

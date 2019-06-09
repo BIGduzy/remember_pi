@@ -25,8 +25,18 @@ content {
     display: flex;
     flex-direction: column;
     height: 500px;
+    max-height: 100%;
     overflow: hidden;
     width: 500px;
+    position: relative;
+}
+
+content #mobile-answer {
+    opacity:0;
+    width: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 90px;
 }
 
 content span {
