@@ -13,12 +13,15 @@ body {
 }
 
 #container {
+    position: fixed;
+    top: 150px;
     align-items: center;
     border: 1px solid;
     display: flex;
     height: 100%;
     justify-content: center;
     width: 100%;
+    z-index: 1;
 }
 
 content {
@@ -80,9 +83,26 @@ content span {
 }
 
 .header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
     padding: 1px;
     text-align: center;
     background: #1e2327;
     color: white;
     font-size: 24px;
+    z-index: 2;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #1e2327;
+    color: white;
+    text-align: center;
+    z-index: 2;
+	font-size: 18px;
 }
