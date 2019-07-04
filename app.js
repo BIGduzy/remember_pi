@@ -31,6 +31,7 @@ window.onload = () => {
     let index = 0;
     let hightest = 0;
     let gameOver = false;
+    var audio = new Audio('Funny-game-over-sound.mp3');
 
     const reset = () => {
         // Enter pressed, reset game
@@ -64,6 +65,7 @@ window.onload = () => {
             } else {
                 const niceIndex = index + Math.round(index / 6) + 4;
                 answer.innerHTML = answer.innerText.slice(0, -1) + `<span class="bad">${answer.innerHTML.slice(-1)}</span>`;
+                audio.play();
                 trueAnswer.innerHTML = answer.innerText.slice(0, -1) + `<span class="good">${pi[index]}</span>`;// + nicePi.substr(index + 1);
 
                 // Reset
