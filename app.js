@@ -27,11 +27,14 @@ window.onload = () => {
         " 59825 34904 28755 46873 11595 62863 88235 37875 93751 95778" +
         " 18577 80532 17122 68066 13001 92787 66111 95909 21642 01989";
     const pi = nicePi.slice(3).split(' ').join('');
+    const audioOef = new Audio('sound/Funny-game-over-sound.mp3');
+    const audioOk = new Audio('sound/typewriter.wav');
+    const audioOkEnter = new Audio('sound/typewriter-ding-near-mono.wav');
     console.log(nicePi)
     let index = 0;
     let hightest = 0;
     let gameOver = false;
-    var audio = new Audio('Funny-game-over-sound.mp3');
+    let checkBox = document.getElementById("checkbox");
 
     const reset = () => {
         // Enter pressed, reset game
@@ -62,15 +65,30 @@ window.onload = () => {
                     hightest = index;
                 }
                 hightestCounter.innerHTML = 'Highscore: ' + hightest;
+
+                checkBox = document.getElementById("checkbox");
+                if (checkBox.checked == false) {
+                    if (index % 5 == 0) {
+                        audioOkEnter.load();
+                        audioOkEnter.play();
+                    } else {
+                        audioOk.load();
+                        audioOk.play();
+                    }
+                }
+
             } else {
                 const niceIndex = index + Math.round(index / 6) + 4;
                 answer.innerHTML = answer.innerText.slice(0, -1) + `<span class="bad">${answer.innerHTML.slice(-1)}</span>`;
-                audio.play();
                 trueAnswer.innerHTML = answer.innerText.slice(0, -1) + `<span class="good">${pi[index]}</span>`;// + nicePi.substr(index + 1);
 
                 // Reset
                 index = 0;
                 gameOver = true;
+                checkBox = document.getElementById("checkbox");
+                if (checkBox.checked == false) {
+                    audioOef.play();
+                }
             }
         }
     };

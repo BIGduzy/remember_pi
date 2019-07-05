@@ -104,5 +104,15 @@ content span {
     color: white;
     text-align: center;
     z-index: 2;
-	font-size: 18px;
+    font-size: 18px;
+}
+
+.footer #linkie:hover {
+    color: white;
+    font-size: 48px;
+}
+
+.footer #linkie:active {
+    color: red;
+    font-size: 180px;
 }
