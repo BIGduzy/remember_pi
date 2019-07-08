@@ -66,7 +66,6 @@ window.onload = () => {
                 }
                 hightestCounter.innerHTML = 'Highscore: ' + hightest;
 
-                checkBox = document.getElementById("checkbox");
                 if (checkBox.checked == false) {
                     if (index % 5 == 0) {
                         audioOkEnter.load();
@@ -85,8 +84,8 @@ window.onload = () => {
                 // Reset
                 index = 0;
                 gameOver = true;
-                checkBox = document.getElementById("checkbox");
                 if (checkBox.checked == false) {
+                    audioOef.load();
                     audioOef.play();
                 }
             }
