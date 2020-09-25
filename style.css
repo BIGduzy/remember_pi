@@ -8,31 +8,37 @@ body {
     margin: 0;
     padding: 0;
     width: 100%;
+    background-color: #24292e;
+    font-family: arial;
 }
 
 #container {
+    position: fixed;
+    top: 150px;
     align-items: center;
     border: 1px solid;
     display: flex;
     height: 100%;
     justify-content: center;
     width: 100%;
+    z-index: 1;
 }
 
 content {
     align-items: center;
-    border: 1px solid;
+    border: 0px solid;
     display: flex;
     flex-direction: column;
-    height: 500px;
+    height: 900px;
     max-height: 100%;
     overflow: hidden;
     width: 500px;
     position: relative;
+    color: #fff
 }
 
 content #mobile-answer {
-    opacity:0;
+    opacity: 0;
     width: 0;
     overflow: hidden;
     position: absolute;
@@ -43,16 +49,18 @@ content #reset-button {
     all: unset;
     align-self: flex-start;
     background-color: #008CBA;
-    cursor: pointer;
-    position: relative;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
     padding: 10px;
     color: #fff;
     border-radius: 4px;
     font-size: 28px;
+    margin-top: 10px;
 }
 
 content #reset-button:hover {
-    box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12), 0 2px 4px -1px rgba(0, 0, 0, .2);
 }
 
 content #reset-button:active {
@@ -72,4 +80,39 @@ content span {
 
 .bad {
     color: #F00;
+}
+
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 1px;
+    text-align: center;
+    background: #1e2327;
+    color: white;
+    font-size: 24px;
+    z-index: 2;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #1e2327;
+    color: white;
+    text-align: center;
+    z-index: 2;
+    font-size: 18px;
+}
+
+.footer #linkie:hover {
+    color: white;
+    font-size: 48px;
+}
+
+.footer #linkie:active {
+    color: red;
+    font-size: 180px;
 }
